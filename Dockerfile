@@ -7,5 +7,4 @@ RUN pip config set global.index-url http://mirrors.cloud.tencent.com/pypi/simple
 && pip install --upgrade pip \
 && pip install -r requirements.txt
 EXPOSE 80
-CMD python manage.py collectstatic --noinput && python manage.py migrate --noinput && uwsgi --http=0.0.0.0:80 --module=backend.wsgi
-
+CMD ["sh","-c","python manage.py collectstatic --noinput && python manage.py migrate --noinput && uwsgi --http=0.0.0.0:80 --module=backend.wsgi"]

@@ -154,6 +154,7 @@ six==1.16.0
     #   html5lib
     #   orderedmultidict
     #   python-dateutil
+PyMySQL==1.0.2
 sqlparse==0.4.2
     # via django
 svglib==1.1.0
