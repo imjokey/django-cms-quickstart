@@ -141,19 +141,9 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 # Configure database using DATABASE_URL; fall back to sqlite in memory when no
 # environment variable is available, e.g. during Docker build
-# DATABASE_URL = os.environ.get('DATABASE_URL', 'sqlite://:memory:')
-# DATABASES = {'default': dj_database_url.parse(DATABASE_URL)}
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get("MYSQL_DATABASE", 'django_demo'),
-        'USER': os.environ.get("MYSQL_USERNAME"),
-        'HOST': os.environ.get("MYSQL_ADDRESS").split(':')[0],
-        'PORT': os.environ.get("MYSQL_ADDRESS").split(':')[1],
-        'PASSWORD': os.environ.get("MYSQL_PASSWORD"),
-        'OPTIONS': {'charset': 'utf8mb4'},
-    }
-}
+DATABASE_URL = os.environ.get('DATABASE_URL', 'sqlite://:memory:')
+DATABASES = {'default': dj_database_url.parse(DATABASE_URL)}
+
 
 
 # Password validation
